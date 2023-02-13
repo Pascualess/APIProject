@@ -5,8 +5,8 @@ export interface ISearchBarProps {
 
 export function SearchBar (props: ISearchBarProps) {
   return (
-    <div>
-      
+    <div className='SearchBar'>
+      <input type="text" />
     </div>
   );
 }
