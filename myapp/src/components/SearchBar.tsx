@@ -16,7 +16,7 @@ const searchTypes = [
   },
   {
     value: "findByCuisine",
-    label: "Find by Name",
+    label: "Find by Cuisine",
   },
   {
     value: "random",
