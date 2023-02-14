@@ -1,0 +1,76 @@
+.Header {
+    background: var(--color-base);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header .Header-Left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    margin: 0px 
+}
+
+.Header .Header-Left .Hamburger {
+    margin: 0 20px 0 10px;
+    font-size: 24px;
+}
+
+.Header .Header-Left .Login,
+.Header .Header-Left .Sign_Up {
+    font-size: 16px;
+    background: var(--color-gray);
+    border: 0;
+    padding: 7px 12px;
+    transition: 0.3s;
+}
+
+.Header .Header-Left .Login {
+    margin-right: 10px;
+}
+
+.Header .Header-Left .Sign_Up {
+    margin-left: 10px;
+}
+
+.Header .Header-Left .Login:hover,
+.Header .Header-Left .Sign_Up:hover {
+    cursor: pointer;
+    background: #000;
+    color: var(--color-gray);
+}
+
+.Header .Logo img {
+    height: 100px;
+    transform: translateX(90px);
+}
+
+.Header .Header-NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.Header .Header-NavBar a {
+    margin: 20px 5px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Header .Header-NavBar a:hover {
+    color: var(--color-gray);
+}
+
+.Header .Header-NavBar span {
+    margin: 20px 5px;
+}
