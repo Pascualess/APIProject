@@ -1,18 +1,23 @@
 import React from 'react';
 import './App.css';
-import { Footer } from './components/Footer/Footer';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Header } from './components/Header/Header';
-import { RecipeItem } from './components/RecipeItem/RecipeItem';
+import { SearchBar } from './components/SearchBar';
+import { Footer } from './components/Footer/Footer';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <br></br>
-      <RecipeItem />
-      <br></br>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <SearchBar />
+        <Routes>
+          
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
