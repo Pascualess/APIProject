@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Recipe } from '../model/RecipeByIngredient';
-import { GetFindByIngredients } from '../services/GetFindByIngredients';
+import { getFindByIngredients } from '../services/GetFindByIngredients';
 
 export interface ISearchBarProps {
 }
@@ -14,7 +14,7 @@ export function SearchBar (props: ISearchBarProps) {
   };
 
   const onSearchClick = () => {
-    GetFindByIngredients(value).then(recipes => {
+    getFindByIngredients(value).then(recipes => {
       setRecipes(recipes);
     });
   };
