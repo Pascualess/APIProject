@@ -8,9 +8,9 @@ const number = "8";
 export function getFindByCuisine(
   query: string,
   cuisine: string
-): Promise<RecipeByCuisine[]> {
+): Promise<RecipeByCuisine> {
   return axios
-    .get<RecipeByCuisine[]>(`https://api.spoonacular.com/recipes/complexSearch`, {
+    .get<RecipeByCuisine>(`https://api.spoonacular.com/recipes/complexSearch`, {
       params: { query, cuisine, number, apiKey },
     })
     .then((response) => response.data);

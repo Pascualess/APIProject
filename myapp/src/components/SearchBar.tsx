@@ -6,6 +6,7 @@ import { Random } from "../model/RecipeByRandom";
 import { getByRandom } from "../services/GetByRandom";
 import { getFindByCuisine } from "../services/GetFindByCuisine";
 import { getFindByIngredients } from "../services/GetFindByIngredients";
+import { RecipeList } from "./RecipeList";
 
 export interface ISearchBarProps {}
 
@@ -27,8 +28,8 @@ const searchTypes = [
 export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine[]>([]);
-  const [recipesByRandom, setRecipesByRandom] = useState<Random[]>([]);
+  const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine>();
+  const [recipesByRandom, setRecipesByRandom] = useState<Random>();
   const [cuisine, setCuisine] = useState(cuisines[1]);
   const [selectedSearchType, setSelectedSearchType] = useState("random");
 
@@ -89,6 +90,7 @@ export function SearchBar(props: ISearchBarProps) {
           </select>
         </div>
       )}
+      {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
     </div>
   );
 }
