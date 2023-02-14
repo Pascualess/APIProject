@@ -1,5 +1,33 @@
 .Header{
-    width: 100%;
-    height: 55px;
-    background-color: #F6532F;
+    display: flex;
+    align-items: center;
+}
+
+img{
+    
+    height: 50px;
+
+}
+
+button{
+    display: none;
+}
+
+@media screen and (min-width: 768px){
+    .Header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    button{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img{
+        position: relative;
+        top: -45px;
+    }
+
+
 }
