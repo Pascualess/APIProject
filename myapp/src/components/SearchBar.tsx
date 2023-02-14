@@ -7,6 +7,7 @@ import { getByRandom } from "../services/GetByRandom";
 import { getFindByCuisine } from "../services/GetFindByCuisine";
 import { getFindByIngredients } from "../services/GetFindByIngredients";
 import { RecipeList } from "./RecipeList";
+import '../css/searchBar.css'
 
 export interface ISearchBarProps {}
 
