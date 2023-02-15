@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     background: var(--color-base);
+    width: 100%;
 }
 
 .Footer .Subscribe {
@@ -26,7 +27,7 @@
 }
 
 .Footer .Footer-Main .Logo img {
-    height: 100px;
+    height: 60px;
 }
 
 .Footer .Footer-Main .SiteMap {
