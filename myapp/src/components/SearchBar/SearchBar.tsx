@@ -1,30 +1,98 @@
-import { useState, useEffect } from 'react';
-import { Recipe } from '../../model/RecipeByIngredient';
-import { GetFindByIngredients } from '../../services/GetFindByIngredients';
-import "./searchbar.css";
+import { useState, useEffect } from "react";
+import { cuisines } from "../../data/cuisines";
+import { RecipeByCuisine } from "../../model/RecipeByCuisine";
+import { Recipe } from "../../model/RecipeByIngredient";
+import { Random } from "../../model/RecipeByRandom";
+import { getByRandom } from "../../services/GetByRandom";
+import { getFindByCuisine } from "../../services/GetFindByCuisine";
+import { GetFindByIngredients } from "../../services/GetFindByIngredients";
+import { RecipeList } from "../RecipeList";
+import '../css/searchBar.css'
 
-export interface ISearchBarProps {
-}
+export interface ISearchBarProps {}
 
-export function SearchBar (props: ISearchBarProps) {
+const searchTypes = [
+  {
+    value: "findByIngredient",
+    label: "Find by Ingredient",
+  },
+  {
+    value: "findByCuisine",
+    label: "Find by Cuisine",
+  },
+  {
+    value: "random",
+    label: "Random",
+  },
+];
+
+export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine>();
+  const [recipesByRandom, setRecipesByRandom] = useState<Random>();
+  const [cuisine, setCuisine] = useState(cuisines[1]);
+  const [selectedSearchType, setSelectedSearchType] = useState("random");
 
-  const onChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
 
   const onSearchClick = () => {
-    GetFindByIngredients(value).then(recipes => {
-      setRecipes(recipes);
-    });
+
+    switch (selectedSearchType) {
+      case "findByIngredient":
+        GetFindByIngredients(value).then((recipes) => {
+          setRecipes(recipes);
+        });
+        break;
+      case "findByCuisine":
+        getFindByCuisine(value, cuisine).then((recipes) => {
+          setRecipesByCuisine(recipes);
+        });
+        break;
+      case "random":
+        getByRandom().then((recipes) => {
+          setRecipesByRandom(recipes);
+        });
+        break;
+      default:
+        break;
+    }
   };
 
   return (
-    <div className='SearchBar'>
-      <input type="text" value={value} onChange={onChange} />
+    <div className="SearchBar">
+      <div>
+        {searchTypes.map((searchType) => (
+          <label key={searchType.value}>
+            <input
+              type="radio"
+              name="searchType"
+              value={searchType.value}
+              checked={selectedSearchType === searchType.value}
+              onChange={(e) => setSelectedSearchType(e.target.value)}
+            />
+            {searchType.label}
+          </label>
+        ))}
+      </div>
+      {selectedSearchType !== "random" && (
+        <input type="text" value={value} onChange={onChange} />
+      )}
       <button onClick={onSearchClick}>Search</button>
-      <button onClick={() => console.log(recipes)}>Log</button>
+      {selectedSearchType === "findByCuisine" && (
+        <div>
+          <select value={cuisine} onChange={(e) => setCuisine(e.target.value)}>
+            {cuisines.map((cuisine) => (
+              <option key={cuisine} value={cuisine}>
+                {cuisine}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+      {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
     </div>
   );
 }
