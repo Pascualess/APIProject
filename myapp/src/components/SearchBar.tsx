@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { cuisines } from "../../data/cuisines";
-import { RecipeByCuisine } from "../../model/RecipeByCuisine";
-import { Recipe } from "../../model/RecipeByIngredient";
-import { Random } from "../../model/RecipeByRandom";
-import { getByRandom } from "../../services/GetByRandom";
-import { getFindByCuisine } from "../../services/GetFindByCuisine";
-import { GetFindByIngredients } from "../../services/GetFindByIngredients";
-import { RecipeList } from "../RecipeList";
+import { cuisines } from "../data/cuisines";
+import { RecipeByCuisine } from "../model/RecipeByCuisine";
+import { Recipe } from "../model/RecipeByIngredient";
+import { Random } from "../model/RecipeByRandom";
+import { getByRandom } from "../services/GetByRandom";
+import { getFindByCuisine } from "../services/GetFindByCuisine";
+import { getFindByIngredients } from "../services/GetFindByIngredients";
+import { RecipeList } from "./RecipeList";
 import '../css/searchBar.css'
 
 export interface ISearchBarProps {}
@@ -39,10 +39,9 @@ export function SearchBar(props: ISearchBarProps) {
   };
 
   const onSearchClick = () => {
-
     switch (selectedSearchType) {
       case "findByIngredient":
-        GetFindByIngredients(value).then((recipes) => {
+        getFindByIngredients(value).then((recipes) => {
           setRecipes(recipes);
         });
         break;
