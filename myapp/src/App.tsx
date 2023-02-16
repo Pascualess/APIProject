@@ -6,6 +6,7 @@ import { SearchBar } from './components/SearchBar';
 import { Footer } from './components/Footer/Footer';
 import { DetailsRoute } from './components/DetailsRoute';
 
+
 function App() {
   return (
     <BrowserRouter>
