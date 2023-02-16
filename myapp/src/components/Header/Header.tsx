@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import "./header.css";
 
 
@@ -20,7 +21,7 @@ export function Header (){
           <span> | </span>
           <a href="#footer">Site Map</a><br />
           <span> | </span>
-          <a href="#favorites">Favorites</a>
+          <Link to={"/favorites"}>Favorites</Link>
       </div>
     </div>
   );

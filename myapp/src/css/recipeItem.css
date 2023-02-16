@@ -12,3 +12,14 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.buttonDiv button .btn-details,
+.buttonDiv button .btn-favorites {
+    background: var(--color-gray);
+    color: #000;
+}
+
+.buttonDiv button .btn-details:hover {
+    background: var(--color-base);
+    color: #fff;
+}
