@@ -5,6 +5,7 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } f
 import "../css/recipeItem.css";
 import { Recipe } from '../model/RecipeByRandom';
 import parse from 'html-react-parser';
+import { Link } from 'react-router-dom';
 import RecipeContext from './context/RecipeContext';
 
 
@@ -36,10 +37,11 @@ export function RecipeItem (props:IRecipeItemProps){
           </CardText>
 
           <div className='buttonDiv'>
-            <Button variant="primary" className="btn-details">
+            {/* <Button variant="primary" className="btn-primary">
               Details
-            </Button>
-            <Button variant="primary" className="btn-favorites" onClick={() => addRecipe}>
+            </Button> */}
+            <Link to= {`/details/${props.recipe.id}`}>Details</Link>
+            <Button variant="primary" className="btn-primary">
               Add to Favorites
             </Button>
           </div>

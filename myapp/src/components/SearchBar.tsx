@@ -7,7 +7,8 @@ import { getByRandom } from "../services/GetByRandom";
 import { getFindByCuisine } from "../services/GetFindByCuisine";
 import { getFindByIngredients } from "../services/GetFindByIngredients";
 import { RecipeList } from "./RecipeList";
-import "../css/searchBar.css";
+import '../css/searchBar.css'
+import { DetailsRoute } from './DetailsRoute';
 
 export interface ISearchBarProps {}
 
@@ -102,6 +103,7 @@ export function SearchBar(props: ISearchBarProps) {
         )}
       </div>
       {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
+      {recipesByRandom && <DetailsRoute recipe={recipesByRandom} />}
     </div>
   );
 }
