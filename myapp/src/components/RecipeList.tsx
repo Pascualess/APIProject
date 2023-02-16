@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Random } from '../model/RecipeByRandom';
 import { RecipeItem } from './RecipeItem';
 import '../css/recipeList.css'
+import { DetailsRoute } from './DetailsRoute';
 
 export interface IRecipeListProps {
   recipesByRandom:Random
@@ -14,6 +15,7 @@ export function RecipeList (props: IRecipeListProps) {
       <div className='singleRecipe'>
         {props.recipesByRandom.recipes.map((recipe) => <RecipeItem recipe={recipe} />)}
       </div>
+      {/* <DetailsRoute recipe={props.recipesByRandom.recipes} /> */}
     </div>
   );
 }
