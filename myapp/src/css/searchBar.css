@@ -1,0 +1,39 @@
+.SearchBar {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding: 50px; */
+  /* background-image:url(./recipe.jpg);
+background-size: 100%; */
+}
+.bar {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+button {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.SearchBar button {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.SearchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  background-image: url(./recipe.jpg);
+  background-size: 100%;
+}
+
+.radio {
+  padding: 5px;
+  color: white;
+}

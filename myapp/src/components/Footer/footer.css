@@ -37,7 +37,7 @@
 }
 
 .Footer .Footer-Main .Logo img {
-    height: 60px;
+    height: 100px;
 }
 
 .Footer .Footer-Main .SiteMap {
@@ -111,5 +111,5 @@
 }
 
 .Footer .Copyright a:hover {
-    color: var(--color-gray);
+    color: #e3e3e3;
 }
