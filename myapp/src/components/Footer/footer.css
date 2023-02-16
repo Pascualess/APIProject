@@ -113,3 +113,29 @@
 .Footer .Copyright a:hover {
     color: #e3e3e3;
 }
+
+@media screen and (max-width: 900px) {
+    .Footer .Footer-Main {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+    }
+
+    .Footer .Footer-Main .Logo {
+        display: none;
+    }
+
+    .Footer .Footer-Main .SiteMap {
+        transform: translateX(0px);
+        margin: -10px 0 0 0;
+    }
+
+    .Footer .Footer-Main .SocialMedia {
+        transform: translateX(10px);
+        margin: -20px 0 0 0;
+    }
+
+    .Footer .Copyright {
+        margin-top: -10px;
+    }
+}

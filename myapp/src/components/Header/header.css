@@ -76,3 +76,38 @@
 .Header .Header-NavBar span {
     margin: 20px 5px;
 }
+
+@media screen and (max-width: 900px) {
+    .Header .Logo img {
+        transform: translateX(-50px);
+    }
+    
+    .Header .Header-NavBar {
+        flex-direction: column;
+        margin: 15px 0;
+        font-size: 14px;
+    }
+
+    .Header .Header-NavBar span {
+        display: none;
+    }
+
+    .Header .Header-NavBar a {
+        margin: -10px 5px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .Header .Header-Left .Login,
+    .Header .Header-Left .Sign_Up {
+        display: none;
+    }
+
+    .Header .Logo img {  
+        transform: translateX(30px);
+    }
+
+    .Header .Header-NavBar {
+        font-size: 14px;
+    }
+}

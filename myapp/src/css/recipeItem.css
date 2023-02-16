@@ -11,6 +11,7 @@
 .buttonDiv{
     display: flex;
     justify-content: space-evenly;
+    bottom: 0;
 }
 
 .buttonDiv button .btn-details,
