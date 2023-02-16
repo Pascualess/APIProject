@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     height: 90px;
+    z-index: 2;
 }
 
 .Header .Header-Left {
@@ -31,6 +32,7 @@
     border: 0;
     padding: 7px 12px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 .Header .Header-Left .Login {

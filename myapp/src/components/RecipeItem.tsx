@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { useContext } from "react";
+
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } from 'reactstrap';
 import "../css/recipeItem.css";
 import { Recipe } from '../model/RecipeByRandom';
 import parse from 'html-react-parser';
+import RecipeContext from './context/RecipeContext';
 
 
 interface IRecipeItemProps{
@@ -11,6 +14,10 @@ interface IRecipeItemProps{
 
 
 export function RecipeItem (props:IRecipeItemProps){
+
+  let {recipe} = props;
+  const { addRecipe } = useContext(RecipeContext);
+
   return (
     <div className="Recipe_Card">
       <Card color="light" style={{width: '18rem', height: '100%'}}>
@@ -29,10 +36,10 @@ export function RecipeItem (props:IRecipeItemProps){
           </CardText>
 
           <div className='buttonDiv'>
-            <Button variant="primary" className="btn-primary">
+            <Button variant="primary" className="btn-details">
               Details
             </Button>
-            <Button variant="primary" className="btn-primary">
+            <Button variant="primary" className="btn-favorites" onClick={() => addRecipe}>
               Add to Favorites
             </Button>
           </div>

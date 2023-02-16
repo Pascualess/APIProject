@@ -4,8 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Header } from './components/Header/Header';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Footer } from './components/Footer/Footer';
-import { RecipeList } from './components/RecipeList/RecipeList';
-
+import { RecipeList } from './components/RecipeList';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Routes>
           
         </Routes>
-        <RecipeList />
         <Footer />
       </div>
     </BrowserRouter>
