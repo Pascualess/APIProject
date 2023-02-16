@@ -11,10 +11,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <SearchBar />
+        {/* <SearchBar /> */}
         <Routes>
+          <Route path='/' element={<SearchBar />} />
           <Route path="/details/:id" element={<DetailsRoute />} />
-          {/* <Route path="*" element={<Navigate to={"/"} />} /> */}
+          <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
         <Footer />
       </div>
