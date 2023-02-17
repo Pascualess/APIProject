@@ -32,7 +32,7 @@ export function RecipeItem (props:IRecipeItemProps){
             Card subtitle
           </CardSubtitle>
           <CardText style={{minHeight: '25%'}}>
-            <p>{parse((props.recipe.summary).substring(0, 200))}</p>
+            {/* <p>{parse((props.recipe.summary).substring(0, 200))}</p> */}
           </CardText>
 
           <div className='buttonDiv'>

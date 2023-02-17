@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Mapper } from "../mapper/mapper";
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { Recipe, SedIngredient } from "../model/RecipeByIngredient";
+import { IngredientSearch, Recipe, SedIngredient } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
@@ -27,9 +27,9 @@ export function getByRandom(): Promise<StandardRecipe[]> {
     })
     .then((response) =>{return Mapper.mapByRandom( response.data)});
 }
-export function getFindByIngredients(ingredients: string): Promise<StandardRecipe> {
+export function getFindByIngredients(ingredients: string): Promise<StandardRecipe[]> {
   return axios
-    .get<Recipe>(`https://api.spoonacular.com/recipes/findByIngredients`, {
+    .get<IngredientSearch>(`https://api.spoonacular.com/recipes/findByIngredients`, {
       params: { ingredients, number, apiKey },
     })
     .then((response) => {
