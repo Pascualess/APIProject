@@ -1,5 +1,5 @@
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { IngredientSearch, Recipe } from "../model/RecipeByIngredient";
+import { IngredientSearch} from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 

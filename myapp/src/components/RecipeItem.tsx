@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { useContext } from "react";
 
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import "../css/recipeItem.css";
-import { Recipe } from '../model/RecipeByRandom';
-import parse from 'html-react-parser';
 import RecipeContext from './context/RecipeContext';
 import { StandardRecipe } from '../model/StandardRecipe';
 

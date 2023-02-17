@@ -1,8 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 import { cuisines } from "../../data/cuisines";
-import { RecipeByCuisine } from "../../model/RecipeByCuisine";
-import { Recipe } from "../../model/RecipeByIngredient";
-import { Random } from "../../model/RecipeByRandom";
 import { StandardRecipe } from "../../model/StandardRecipe";
 import { getByRandom, getFindByCuisine, getFindByIngredients } from "../../services/RecipeService";
 import { RecipeList } from "../RecipeList";

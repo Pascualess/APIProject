@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Mapper } from "../mapper/mapper";
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { IngredientSearch, Recipe, SedIngredient } from "../model/RecipeByIngredient";
+import { IngredientSearch} from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
