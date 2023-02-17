@@ -15,7 +15,7 @@ export function Header (){
         <img src="https://static.thenounproject.com/png/3670726-200.png" alt="" />
       </div>
       <div className="Header-NavBar">
-          <a href="#search">Search Bar</a><br />
+          <Link to={'/'}>Search Bar</Link>
           <span> | </span>
           <a href="#recipeList">Recipe Results</a><br />
           <span> | </span>
