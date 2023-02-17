@@ -8,6 +8,7 @@ import { getFindByCuisine } from "../services/GetFindByCuisine";
 import { getFindByIngredients } from "../services/GetFindByIngredients";
 import { RecipeList } from "./RecipeList";
 import "../css/searchBar.css";
+import { StandardRecipe } from "../model/StandardRecipe";
 
 export interface ISearchBarProps {}
 
@@ -28,7 +29,7 @@ const searchTypes = [
 
 export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [recipes, setRecipes] = useState<StandardRecipe[]>([]);
   const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine>();
   const [recipesByRandom, setRecipesByRandom] = useState<Random>();
   const [cuisine, setCuisine] = useState(cuisines[1]);
@@ -47,7 +48,7 @@ export function SearchBar(props: ISearchBarProps) {
         break;
       case "findByCuisine":
         getFindByCuisine(value, cuisine).then((recipes) => {
-          setRecipesByCuisine(recipes);
+          setRecipes(recipes);
         });
         break;
       case "random":
