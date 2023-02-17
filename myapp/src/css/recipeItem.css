@@ -8,19 +8,28 @@
     height: 250px;
     width: 100%;
 }
-.buttonDiv{
+
+.Recipe_Card .buttonDiv {
     display: flex;
     justify-content: space-evenly;
     bottom: 0;
 }
 
-.buttonDiv button .btn-details,
-.buttonDiv button .btn-favorites {
-    background: var(--color-gray);
-    color: #000;
+.Recipe_Card .buttonDiv button {
+    background-color: #6C757D;
+    border-color: #6C757D;
+    color: #FFF;
+    transition: 0.3s;
 }
 
-.buttonDiv button .btn-details:hover {
-    background: var(--color-base);
-    color: #fff;
+.Recipe_Card .buttonDiv button:hover {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+}
+
+.Recipe_Card .buttonDiv .btn-favorites {
+    line-break: normal;
+    padding: 0.375rem 0.75rem;
+    width: 150px;
+    line-height: 20px;
 }
