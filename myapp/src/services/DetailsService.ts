@@ -3,12 +3,11 @@ import { Recipe, SedIngredient } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 
 const apiKey = "44dfeaa9703845deaa770e7b3aa388fd";
-const number ="8"
 
-export function getByRandom(): Promise<Random> {
+export function GetDetails(id:string): Promise<Random> {
   return axios
-    .get<Random>(`https://api.spoonacular.com/recipes/random`, {
-      params: {number, apiKey },
+    .get<Random>(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions`, {
+      params: { apiKey },
     })
     .then((response) => response.data);
 }

@@ -6,16 +6,16 @@ import "../css/recipeItem.css";
 import { Recipe } from '../model/RecipeByRandom';
 import parse from 'html-react-parser';
 import RecipeContext from './context/RecipeContext';
+import { StandardRecipe } from '../model/StandardRecipe';
 
 
 interface IRecipeItemProps{
-  recipe: Recipe
+  recipe: StandardRecipe
 }
 
 
 export function RecipeItem (props:IRecipeItemProps){
 
-  let {recipe} = props;
   const { addRecipe } = useContext(RecipeContext);
 
   return (

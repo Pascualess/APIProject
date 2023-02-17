@@ -4,7 +4,7 @@ import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
 export class Mapper {
-  mapByRandom(random: Random): StandardRecipe[] {
+  static mapByRandom(random: Random): StandardRecipe[] {
     return random.recipes.map((recipe) => ({
       id: recipe.id,
       title: recipe.title,
@@ -12,7 +12,7 @@ export class Mapper {
     }));
   }
 
-  mapByCuisine(recipeByCuisine: RecipeByCuisine): StandardRecipe[] {
+  static mapByCuisine(recipeByCuisine: RecipeByCuisine): StandardRecipe[] {
     return recipeByCuisine.results.map((result) => ({
       id: result.id,
       title: result.title,
@@ -20,7 +20,7 @@ export class Mapper {
     }));
   }
 
-  mapByIngredient(recipe: Recipe): StandardRecipe {
+  static mapByIngredient(recipe: Recipe): StandardRecipe {
     return {
       id: recipe.id,
       title: recipe.title,

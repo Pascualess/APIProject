@@ -4,7 +4,7 @@ import { RecipeByCuisine } from "../model/RecipeByCuisine";
 import { Recipe } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { getByRandom } from "../services/GetByRandom";
-import { getFindByCuisine } from "../services/GetFindByCuisine";
+import { getFindByCuisine } from "../services/RecipeService";
 import { getFindByIngredients } from "../services/GetFindByIngredients";
 import { RecipeList } from "./RecipeList";
 import "../css/searchBar.css";
