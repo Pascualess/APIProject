@@ -1,5 +1,5 @@
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { IngredientSearch} from "../model/RecipeByIngredient";
+import { Recipe } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
@@ -20,13 +20,11 @@ export class Mapper {
     }));
   }
 
-  static mapByIngredient(
-    recipeByIngredient: IngredientSearch
-  ): StandardRecipe[] {
-    return recipeByIngredient.recipes.map((recipe) => ({
+  static mapByIngredient(recipe: Recipe): StandardRecipe {
+    return {
       id: recipe.id,
       title: recipe.title,
       image: recipe.image,
-    }));
+    };
   }
 }

@@ -97,7 +97,7 @@ export function SearchBar(props: ISearchBarProps) {
           </div>
         )}
       </div>
-      {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
+      {recipes && <RecipeList recipes={recipes} />}
     </div>
   );
 }
