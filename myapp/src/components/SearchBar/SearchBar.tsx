@@ -24,6 +24,7 @@ const searchTypes = [
 export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
   const [recipes, setRecipes] = useState<StandardRecipe[]>([]);
+  const [recipe, setRecipe] = useState<StandardRecipe>(); //Testing if i can get getFindByIngredients to work
   const [cuisine, setCuisine] = useState(cuisines[1]);
   const [selectedSearchType, setSelectedSearchType] = useState("random");
 
@@ -34,8 +35,8 @@ export function SearchBar(props: ISearchBarProps) {
   const onSearchClick = () => {
     switch (selectedSearchType) {
       case "findByIngredient":
-        getFindByIngredients(value).then((recipes) => {
-          setRecipes(recipes);
+        getFindByIngredients(value).then((recipe) => {
+          setRecipe(recipe); // this is using the test useState
         });
         break;
       case "findByCuisine":
