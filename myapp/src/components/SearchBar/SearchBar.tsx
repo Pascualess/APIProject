@@ -35,8 +35,8 @@ export function SearchBar(props: ISearchBarProps) {
   const onSearchClick = () => {
     switch (selectedSearchType) {
       case "findByIngredient":
-        getFindByIngredients(value).then((recipe) => {
-          setRecipe(recipe); // this is using the test useState
+        getFindByIngredients(value).then((recipes) => {
+          setRecipes(recipes); // this is using the test useState
         });
         break;
       case "findByCuisine":
