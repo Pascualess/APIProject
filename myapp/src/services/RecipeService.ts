@@ -27,9 +27,9 @@ export function getByRandom(): Promise<StandardRecipe[]> {
     })
     .then((response) =>{return Mapper.mapByRandom( response.data)});
 }
-export function getFindByIngredients(ingredients: string): Promise<StandardRecipe> {
+export function getFindByIngredients(ingredients: string): Promise<StandardRecipe[]> {
   return axios
-    .get<Recipe>(`https://api.spoonacular.com/recipes/findByIngredients`, {
+    .get<Recipe[]>(`https://api.spoonacular.com/recipes/findByIngredients`, {
       params: { ingredients, number, apiKey },
     })
     .then((response) => {

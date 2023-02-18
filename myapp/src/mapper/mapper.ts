@@ -20,11 +20,7 @@ export class Mapper {
     }));
   }
 
-  static mapByIngredient(recipe: Recipe): StandardRecipe {
-    return {
-      id: recipe.id,
-      title: recipe.title,
-      image: recipe.image,
-    };
+  static mapByIngredient(recipe: Recipe[]): StandardRecipe[] {
+    return recipe.map((r) => ({ id: r.id, title: r.title, image: r.image}));
   }
-}
+  }
