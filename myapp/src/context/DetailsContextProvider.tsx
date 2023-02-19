@@ -15,9 +15,14 @@ const DetailsContextProvider = ({children}:IDetailsContextProviderProps) => {
         detailedRecipe([...details, recipe]);
     }
 
+    const removeDetails = (id:number) => {
+        detailedRecipe(details.filter((x) => x.id !== id));
+    };
+
     return(<DetailsContext.Provider value={{
         details: details,
         showRecipe: showRecipe,
+        removeDetails: removeDetails,
     }}>{children}</DetailsContext.Provider>)
 };
 

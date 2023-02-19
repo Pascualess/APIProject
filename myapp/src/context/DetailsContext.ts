@@ -4,6 +4,7 @@ import { createContext } from "react";
 const defaultValue: DetailsContextModel = {
     details: [],
     showRecipe: () => {},
+    removeDetails: () => {},
 }
 
 const DetailsContext = createContext(defaultValue);

@@ -7,7 +7,7 @@ import DetailsContext from "../../context/DetailsContext";
 
 export function Details(){
 
-    const { details } = useContext(DetailsContext);
+    const { details, removeDetails } = useContext(DetailsContext);
     const { addRecipe } = useContext(RecipeContext);
 
     function displayBoolean(value: boolean){
@@ -15,7 +15,7 @@ export function Details(){
     };
 
     return (
-        <div className="Details">
+        <div className="Details" id="details">
             <div className="Details_Header">
                 <h2 className="Details_Header__Title">Your Detailed Recipe</h2>
             </div>
@@ -27,17 +27,24 @@ export function Details(){
                         <CardBody>
                             <CardTitle>{recipe.title}</CardTitle>
                             <CardText>
-                                <p>{parse((recipe.summary).substring(0, 200))}</p>
                                 <div className="Recipe_Card_Additional">
+                                    <div className="Recipe_Source">
+                                        <p>Original Source: </p><a href={recipe.sourceUrl} target="_blank">{recipe.sourceName}</a>
+                                    </div>
                                     <p>Dairy Free ? : {displayBoolean(recipe.dairyFree)}</p>
                                     <p># of Servings: {recipe.servings}</p>
-                                    <div className="Recipe_Source">
-                                        <p>Original Source: </p><a href={recipe.sourceUrl} target="_blank">Click Here</a>
-                                    </div>
+
+                                </div>
+                                <p className="Recipe_Card_Summary">{parse((recipe.summary).substring(0, 2000))}</p>
+                                <div className="Recipe_Card_Instructions">
+                                    {recipe.instructions}
                                 </div>
                             </CardText>
 
                             <div className='buttonDiv'>
+                            <button className="btn-details" onClick={() => removeDetails(recipe.id)}>
+                                    Remove from Details
+                                </button>
                                 <button className="btn-favorites" onClick={() => addRecipe(recipe)}>
                                     Add to Favorites
                                 </button>

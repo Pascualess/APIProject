@@ -11,7 +11,7 @@ export function Favorites(){
     const { showRecipe } = useContext(DetailsContext);
 
     return (
-        <div className="Favorites">
+        <div className="Favorites" id="favorites">
             <div className="Favorites_Header">
                 <h2 className="Favorites_Header__Title">Your Favorite Recipes</h2>
             </div>

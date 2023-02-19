@@ -21,7 +21,7 @@ export function Header (){
           <span> | </span>
           <a href="#footer">Site Map</a><br />
           <span> | </span>
-          <Link to={"/favorites"}>Favorites</Link>
+          <a href="#favorites">Favorites</a>
       </div>
     </div>
   );

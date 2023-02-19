@@ -5,6 +5,7 @@
     height: 200px;
     width: 100%;
     background-image: url(../../css/recipe.jpg);
+    background-size: 100%;
 }
 
 .Favorites_Header h2.Favorites_Header__Title {
@@ -54,4 +55,11 @@
     padding: 0.375rem 0.75rem;
     width: 150px;
     line-height: 20px;
+}
+
+@media screen and (max-width: 900px) {
+
+}
+
+@media screen and (max-width: 520px) {
 }
