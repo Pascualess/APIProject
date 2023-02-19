@@ -9,20 +9,19 @@ import RecipeContextProvider from './context/RecipeContextProvider';
 import { Details } from './components/Details/Details';
 import DetailsContextProvider from './context/DetailsContextProvider';
 
-function App() {
+function App() { 
   return (
     <BrowserRouter>
       <div className="App">
         <RecipeContextProvider>
         <DetailsContextProvider>
           <Header />
-          <SearchBar />
           <Routes>
-          
+            <Route path="/" element={<SearchBar />} />
+            <Route path="/#favorites" element={<Favorites />} />
+            <Route path="/#details" element={<Details />} />
           </Routes>
           <Footer />
-          <Favorites />
-          <Details />
           </DetailsContextProvider>
         </RecipeContextProvider>
       </div>

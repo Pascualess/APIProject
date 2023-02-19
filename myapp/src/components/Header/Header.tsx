@@ -12,7 +12,7 @@ export function Header (){
         <button className="Sign_Up">Sign Up</button>
       </div>
       <div className="Logo">
-        <img src="https://static.thenounproject.com/png/3670726-200.png" alt="" />
+        <Link to="/"><img src="https://static.thenounproject.com/png/3670726-200.png" alt="" /></Link>
       </div>
       <div className="Header-NavBar">
           <a href="#search">Search Bar</a><br />
@@ -21,7 +21,7 @@ export function Header (){
           <span> | </span>
           <a href="#footer">Site Map</a><br />
           <span> | </span>
-          <a href="#favorites">Favorites</a>
+          <Link to="/#favorites">Favorites</Link>
       </div>
     </div>
   );
