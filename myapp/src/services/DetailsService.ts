@@ -1,11 +1,11 @@
 import axios from "axios";
-import { Random } from "../model/RecipeByRandom";
+import { Info } from "../model/RecipeInfo";
 
 const apiKey = "44dfeaa9703845deaa770e7b3aa388fd";
 
-export function GetDetails(id:string): Promise<Random> {
+export function GetInfo(id: string): Promise<Info> {
   return axios
-    .get<Random>(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions`, {
+    .get<Info>(`https://api.spoonacular.com/recipes/${id}/information`, {
       params: { apiKey },
     })
     .then((response) => response.data);

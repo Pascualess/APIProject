@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { Info } from "../model/RecipeInfo";
 import { StandardRecipe } from "../model/StandardRecipe";
 import DetailsContext from "./DetailsContext";
 
@@ -7,7 +8,7 @@ interface IDetailsContextProviderProps {
 }
 
 const DetailsContextProvider = ({children}:IDetailsContextProviderProps) => {
-    const [details, detailedRecipe] = useState<StandardRecipe[]>([]);
+    const [details, detailedRecipe] = useState<Info>();
 
     const showRecipe = (recipe:StandardRecipe) => {
         detailedRecipe([...details, recipe]);
