@@ -70,6 +70,7 @@ export function SearchBar(props: ISearchBarProps) {
               <input
                 type="radio"
                 name="searchType"
+                id="input"
                 value={searchType.value}
                 checked={selectedSearchType === searchType.value}
                 onChange={(e) => setSelectedSearchType(e.target.value)}
@@ -86,7 +87,7 @@ export function SearchBar(props: ISearchBarProps) {
             onChange={onChange}
           />
         )}
-        <button onClick={onSearchClick}>Search</button>
+        <button id="btn-search" onClick={onSearchClick}>Search</button>
         {selectedSearchType === "findByCuisine" && (
           <div>
             <select

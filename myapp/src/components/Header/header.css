@@ -20,6 +20,7 @@
 .Header .Header-Left .Hamburger {
     margin: 0 20px 0 10px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .Header .Header-Left .Login,
@@ -50,6 +51,10 @@
 .Header .Logo img {
     height: 100px;
     transform: translateX(90px);
+}
+
+.Header .Logo a {
+    cursor: pointer;
 }
 
 .Header .Header-NavBar {

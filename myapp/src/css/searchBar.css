@@ -1,29 +1,19 @@
 .SearchBar {
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* padding: 50px; */
-  /* background-image:url(./recipe.jpg);
-background-size: 100%; */
 }
-.bar {
+
+.SearchBar .bar {
   border-radius: 5px;
   margin-bottom: 15px;
   margin-top: 15px;
+  width: 450px;
+  padding: 2px 7px;
+  font-size: 18px;
 }
 
-button {
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.SearchBar button {
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.SearchContainer {
+.SearchBar .SearchContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +23,33 @@ button {
   background-size: 100%;
 }
 
-.radio {
-  padding: 5px;
+.SearchBar .radio {
+  padding-right: 5px;
   color: white;
+  margin-right: 17px;
+  transform: translateX(10px);
+  font-size: 18px;
+}
+
+.SearchBar .radio #input {
+  margin-right: 7px;
+}
+
+.SearchBar button {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.SearchBar #btn-search {
+  font-size: 20px;
+  background: var(--color-gray);
+  border-color: var(--color-gray);
+  padding: 2px 20px;
+  transition: 0.3s;
+}
+
+.SearchBar #btn-search:hover {
+  background: var(--color-base);
+  border-color: var(--color-base);
+  color: #fff;
 }
