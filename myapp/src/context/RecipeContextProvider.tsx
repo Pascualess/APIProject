@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
-import { Recipe } from "../../model/RecipeByIngredient";
-import { RecipeByCuisine } from "../../model/RecipeByCuisine";
-import { Random } from "../../model/RecipeByRandom";
+// import { Recipe } from "../model/RecipeByIngredient";
+// import { RecipeByCuisine } from "../model/RecipeByCuisine";
+import { Recipe } from "../model/RecipeByRandom";
 import RecipeContext from "./RecipeContext";
 
 interface IRecipeContextProviderProps {

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useContext } from "react";
-
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import "../css/recipeItem.css";
 import RecipeContext from './context/RecipeContext';
@@ -11,56 +10,33 @@ interface IRecipeItemProps{
   recipe: StandardRecipe
 }
 
-
-export function RecipeItem (props:IRecipeItemProps){
+export function RecipeItem(props:IRecipeItemProps){
 
   const { addRecipe } = useContext(RecipeContext);
+  const { showRecipe } = useContext(DetailsContext);
 
   return (
     <div className="Recipe_Card">
       <Card color="light" style={{width: '18rem', height: '100%'}}>
-        <img alt="Sample" src={props.recipe.image}/>
+        <img alt="" src={recipe.image}/>
         <CardBody>
-          <CardTitle tag="h5">
-            {props.recipe.title}
-          </CardTitle>
-          <CardSubtitle
-            className="mb-2 text-muted"
-            tag="h6">
-            Card subtitle
-          </CardSubtitle>
+          <CardTitle tag="h5">{recipe.title}</CardTitle>
           <CardText style={{minHeight: '25%'}}>
-            {/* <p>{parse((props.recipe.summary).substring(0, 200))}</p> */}
+
+            <p>{parse((recipe.summary).substring(0, 200))}</p>
+
           </CardText>
 
           <div className='buttonDiv'>
-            <Button variant="primary" className="btn-details">
+            <button className="btn-details" onClick={() => showRecipe(recipe)}>
               Details
-            </Button>
-            <Button variant="primary" className="btn-favorites" onClick={() => addRecipe}>
+            </button>
+            <button className="btn-favorites" onClick={() => addRecipe(recipe)}>
               Add to Favorites
-            </Button>
+            </button>
           </div>
-
         </CardBody>
       </Card>
-        {/* <div className="Recipe_Image">
-          <img src={props.recipe.image} alt="" />
-        </div>
-
-        <div className="Recipe_Name">
-          <p>{props.recipe.title}</p>
-        </div>
-
-        <div className="Recipe_Props">
-          <div className="Prop1"><p>Prop 1</p></div>
-          <div className="Prop2"><p>Prop 2</p></div>
-        </div>
-        
-        <div className="Favorite">
-          <a href="#">Add to Favorites</a>
-          <a href="#"><i className="fa-sharp fa-solid fa-star"></i></a>
-        </div> */}
-      </div>
+    </div>
   );
 }
