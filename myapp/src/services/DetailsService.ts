@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Recipe, SedIngredient } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 
 const apiKey = "44dfeaa9703845deaa770e7b3aa388fd";
