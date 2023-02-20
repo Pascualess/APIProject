@@ -17,10 +17,14 @@
     margin: 0px 
 }
 
-.Header .Header-Left .Hamburger {
+.Header .Header-Left .Hamburger-Closed {
     margin: 0 20px 0 10px;
     font-size: 24px;
     cursor: pointer;
+}
+
+.Header .Header-Left .Hamburger-Closed i:hover {
+    color: var(--color-gray);
 }
 
 .Header .Header-Left .Login,
@@ -48,6 +52,126 @@
     color: var(--color-gray);
 }
 
+/* -------------- HAMBURGER-OPEN STYLING ------------ */
+
+.Hamburger-Container.visible {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.Hamburger-Container {
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    color: #fff;
+    width: 300px;
+    height: 100%;
+}
+
+.Hamburger-Container.hidden {
+    display:none;
+}
+
+.Hamburger-Container .Icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 2.5rem 1.25rem 0;
+}
+
+.Hamburger-Container .Icon i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.Hamburger-Container .Links {
+    height: 350px;
+    width: 100%;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    transform: translateX(-15px);
+}
+
+.Hamburger-Container .Links li,
+.Hamburger-Container .SocialMedia li {
+    list-style-type: none;
+}
+
+.Hamburger-Container .Links li a,
+.Hamburger-Container .SocialMedia li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.Hamburger-Container .Icon i:hover,
+.Hamburger-Container .Links li a:hover,
+.Hamburger-Container .SocialMedia a:hover {
+    color: var(--color-base);
+}
+
+.Hamburger-Container .SocialMedia {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 20px;
+    transform: translateX(-15px);
+}
+
+.Hamburger-Container .SocialMedia li a {
+    font-size: 26px;
+}
+
+.Hamburger-Container p {
+    width: 100%;
+    margin: 10px auto 15px;
+    font-size: 18px;
+}
+
+.Hamburger-Container .SocialMedia {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Hamburger-Container .User {
+    width: 100%;
+    padding: 20px 0;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Hamburger-Container .User button {
+    font-size: 18px;
+    background: var(--color-gray);
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.Hamburger-Container.visible .User button:hover {
+    background: var(--color-base);
+    border-color: var(--color-base);
+    color: #fff;
+}
+
+
+/* -------------- LOGO STYLING ------------ */
+
 .Header .Logo img {
     height: 100px;
     transform: translateX(90px);
@@ -56,6 +180,8 @@
 .Header .Logo a {
     cursor: pointer;
 }
+
+/* -------------- NAVBAR STYLING ------------ */
 
 .Header .Header-NavBar {
     display: flex;
@@ -81,6 +207,9 @@
 .Header .Header-NavBar span {
     margin: 20px 5px;
 }
+
+
+/* -------------- MOBILE RESPONSIVENESS ------------ */
 
 @media screen and (max-width: 900px) {
     .Header .Logo img {
