@@ -23,10 +23,13 @@ export function Details(){
                 {details.map((recipe) => 
                     <div key={recipe.id} className="Recipe_Card">
                     <Card>
-                        <img alt="" src={recipe.image}/>
+                        <div className="Card-Image">
+                            <img alt="" src={recipe.image}/>
+                        </div>
                         <CardBody>
-                            <CardTitle>{recipe.title}</CardTitle>
-                            <CardText>
+                            <CardTitle tag="h5">{recipe.title}</CardTitle>
+                            
+                            {/* <CardText>
                                 <div className="Recipe_Card_Additional">
                                     <div className="Recipe_Source">
                                         <p>Original Source: </p><a href={recipe.sourceUrl} target="_blank">{recipe.sourceName}</a>
@@ -39,10 +42,10 @@ export function Details(){
                                 <div className="Recipe_Card_Instructions">
                                     {recipe.instructions}
                                 </div>
-                            </CardText>
+                            </CardText> */}
 
                             <div className='buttonDiv'>
-                            <button className="btn-details" onClick={() => removeDetails(recipe.id)}>
+                                <button className="btn-details" onClick={() => removeDetails(recipe.id)}>
                                     Remove from Details
                                 </button>
                                 <button className="btn-favorites" onClick={() => addRecipe(recipe)}>

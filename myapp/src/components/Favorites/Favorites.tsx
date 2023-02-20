@@ -19,13 +19,17 @@ export function Favorites(){
             <div className="Favorites_Recipe__Container">
                 {favorites.map((recipe) => 
                     <div key={recipe.id} className="Recipe_Card">
-                    <Card color="light" style={{width: '18rem', height: '100%'}}>
-                        <img alt="" src={recipe.image}/>
+                    <Card>
+                        <div className="Card-Image">
+                            <img alt="" src={recipe.image}/>
+                        </div>
                         <CardBody>
                             <CardTitle tag="h5">{recipe.title}</CardTitle>
-                            <CardText style={{minHeight: '25%'}}>
+
+                            {/* <CardText style={{minHeight: '25%'}}>
                                 <p>{parse((recipe.summary).substring(0, 200))}</p>
-                            </CardText>
+                            </CardText> */}
+
                             <div className='buttonDiv'>
                                 <button className="btn-details" onClick={() => showRecipe(recipe)}>
                                     Details

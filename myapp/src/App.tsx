@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from './components/Header/Header';
 import { SearchBar } from './components/SearchBar';
 import { Footer } from './components/Footer/Footer';
@@ -22,6 +22,8 @@ function App() {
             <Route path="/#details" element={<Details />} />
           </Routes>
           <Footer />
+          <Favorites />
+          <Details />
           </DetailsContextProvider>
         </RecipeContextProvider>
       </div>

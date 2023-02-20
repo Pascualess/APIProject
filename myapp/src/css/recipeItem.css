@@ -2,17 +2,32 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
+    width: 18rem;
+    height: 26rem;
 }
 
-.Recipe_Card img {
-    height: 250px;
+.Recipe_Card .Card-Image {
+    height: 15rem;
     width: 100%;
+}
+
+.Recipe_Card .Card-Image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Recipe_Card .card-body {
+    height: 11rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .Recipe_Card .buttonDiv {
     display: flex;
     justify-content: space-evenly;
-    bottom: 0;
 }
 
 .Recipe_Card .buttonDiv button {
