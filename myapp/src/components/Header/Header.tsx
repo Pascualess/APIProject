@@ -30,10 +30,10 @@ export function Header (){
 
             <p>Follow us:</p>
             <ul className="SocialMedia">
-                <li><a href="https://www.facebook.com"><i className="fa-brands fa-facebook"></i></a></li><br />
-                <li><a href="https://www.instagram.com"><i className="fa-brands fa-instagram"></i></a></li><br />
-                <li><a href="https://www.twitter.com"><i className="fa-brands fa-twitter"></i></a></li><br />
-                <li><a href="https://www.pinterest.com"><i className="fa-brands fa-pinterest"></i></a></li><br />
+                <li><a href="https://www.facebook.com" target="_blank"><i className="fa-brands fa-facebook"></i></a></li><br />
+                <li><a href="https://www.instagram.com" target="_blank"><i className="fa-brands fa-instagram"></i></a></li><br />
+                <li><a href="https://www.twitter.com" target="_blank"><i className="fa-brands fa-twitter"></i></a></li><br />
+                <li><a href="https://www.pinterest.com" target="_blank"><i className="fa-brands fa-pinterest"></i></a></li><br />
             </ul>
 
             <div className="User">
