@@ -10,7 +10,9 @@
 
 .Footer .Subscribe {
     display: flex;
+    justify-content: center;
     margin: 10px auto -5px;
+    width: 100%;
 }
 
 .Footer .Subscribe a {
@@ -26,14 +28,16 @@
 .Footer .Footer-Main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: -10px 0 0 0;
+    width: 100%;
 }
 
 .Footer .Footer-Main .Logo {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    width: 33%;
 }
 
 .Footer .Footer-Main .Logo img {
@@ -45,7 +49,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transform: translateX(70px);
+    width: 33%;
 }
 
 .Footer .Footer-Main .SiteMap a {
@@ -67,9 +71,10 @@
 .Footer .Footer-Main .SocialMedia {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     padding-right: 20px;
+    width: 33%;
 }
 
 .Footer .Footer-Main .SocialMedia a {
@@ -92,9 +97,9 @@
 
 .Footer .Copyright {
     display: flex;
-    margin: 0 auto;
     padding-bottom: 10px;
     align-items: center;
+    justify-content: center;
 }
 
 .Footer .Copyright i {
@@ -114,28 +119,35 @@
     color: #e3e3e3;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
     .Footer .Footer-Main {
         display: flex;
         flex-direction: column;
-        /* justify-content: space-between; */
     }
 
     .Footer .Footer-Main .Logo {
-        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 -10px 0;
     }
 
     .Footer .Footer-Main .SiteMap {
-        transform: translateX(0px);
+        width: 100%;
         margin: -10px 0 0 0;
+        align-items: center;
+        justify-content: center;
     }
 
     .Footer .Footer-Main .SocialMedia {
-        transform: translateX(10px);
+        width: 100%;
         margin: -20px 0 0 0;
+        align-items: center;
+        justify-content: center;
     }
 
     .Footer .Copyright {
+        width: 100%;
         margin-top: -10px;
     }
 }

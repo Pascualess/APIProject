@@ -1,7 +1,8 @@
 import { ReactNode, useState } from "react";
 // import { Recipe } from "../model/RecipeByIngredient";
 // import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { Recipe } from "../model/RecipeByRandom";
+// import { Recipe } from "../model/RecipeByRandom";
+import { StandardRecipe } from "../model/StandardRecipe";
 import RecipeContext from "./RecipeContext";
 
 interface IRecipeContextProviderProps {
@@ -9,9 +10,9 @@ interface IRecipeContextProviderProps {
 }
 
 const RecipeContextProvider = ({children}:IRecipeContextProviderProps) => {
-    const [favorites, setRecipe] = useState<Recipe[]>([]);
+    const [favorites, setRecipe] = useState<StandardRecipe[]>([]);
 
-    const addRecipe = (recipe:Recipe) => {
+    const addRecipe = (recipe:StandardRecipe) => {
         setRecipe([...favorites, recipe]);
     };
 

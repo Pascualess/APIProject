@@ -8,9 +8,10 @@
   border-radius: 5px;
   margin-bottom: 15px;
   margin-top: 15px;
-  width: 450px;
+  width: 50%;
   padding: 2px 7px;
   font-size: 18px;
+  text-align: center;
 }
 
 .SearchBar .SearchContainer {
@@ -20,13 +21,13 @@
   flex-direction: column;
   padding: 50px;
   background-image: url(./recipe.jpg);
-  background-size: 100%;
+  background-size: cover;
 }
 
 .SearchBar .radio {
   padding-right: 5px;
-  color: white;
-  margin-right: 17px;
+  color: #000;
+  margin-right: 30px;
   transform: translateX(10px);
   font-size: 18px;
 }

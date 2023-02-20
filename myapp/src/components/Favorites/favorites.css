@@ -10,7 +10,7 @@
 
 .Favorites_Header h2.Favorites_Header__Title {
     font-size: 50px;
-    color: #fff;
+    color: #000;
 }
 
 .Favorites_Recipe__Container {
@@ -24,20 +24,34 @@
     flex-direction: column;
     margin: 10px;
     width: 18rem;
-    height: 100%;
+    height: 26rem;
 }
 
-.Favorites_Recipe__Container .Recipe_Card img {
-    height: 250px;
+.Favorites_Recipe__Container .Recipe_Card .Card-Image {
+    height: 15rem;
     width: 100%;
 }
-.Favorites_Recipe__Container .buttonDiv {
-    display: flex;
-    justify-content: space-evenly;
-    bottom: 0;
+
+.Favorites_Recipe__Container .Recipe_Card .Card-Image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
-.Favorites_Recipe__Container .buttonDiv button {
+.Favorites_Recipe__Container .Recipe_Card .card-body {
+    height: 11rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Favorites_Recipe__Container .Recipe_Card .buttonDiv {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Favorites_Recipe__Container .Recipe_Card .buttonDiv button {
     border-radius: 5px;
     background-color: #6C757D;
     border-color: #6C757D;
@@ -50,16 +64,13 @@
     border-color: var(--color-base);
 }
 
+.Favorites_Recipe__Container .buttonDiv .btn-details {
+    width: 80px;
+}
+
 .Favorites_Recipe__Container .buttonDiv .btn-favorites {
     line-break: normal;
     padding: 0.375rem 0.75rem;
-    width: 150px;
+    width: 135px;
     line-height: 20px;
-}
-
-@media screen and (max-width: 900px) {
-
-}
-
-@media screen and (max-width: 520px) {
 }
