@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { cuisines } from "../data/cuisines";
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { Recipe } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
-import { getByRandom } from "../services/GetByRandom";
-import { getFindByCuisine } from "../services/GetFindByCuisine";
-import { getFindByIngredients } from "../services/GetFindByIngredients";
+import { getByRandom, getFindByCuisine, getFindByIngredients } from "../services/RecipeService";
 import { RecipeList } from "./RecipeList";
 import "../css/searchBar.css";
 import { StandardRecipe } from "../model/StandardRecipe";
@@ -30,8 +27,6 @@ const searchTypes = [
 export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
   const [recipes, setRecipes] = useState<StandardRecipe[]>([]);
-  const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine>();
-  const [recipesByRandom, setRecipesByRandom] = useState<Random>();
   const [cuisine, setCuisine] = useState(cuisines[1]);
   const [selectedSearchType, setSelectedSearchType] = useState("random");
 
@@ -53,7 +48,7 @@ export function SearchBar(props: ISearchBarProps) {
         break;
       case "random":
         getByRandom().then((recipes) => {
-          setRecipesByRandom(recipes);
+          setRecipes(recipes);
         });
         break;
       default:
@@ -103,7 +98,7 @@ export function SearchBar(props: ISearchBarProps) {
           </div>
         )}
       </div>
-      {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
+      {recipes && <RecipeList recipes={recipes} />}
     </div>
   );
 }

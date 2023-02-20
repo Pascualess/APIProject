@@ -1,19 +1,17 @@
 import * as React from 'react';
 import { useContext } from "react";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import "../css/recipeItem.css";
-import { Recipe } from '../model/RecipeByRandom';
-import parse from 'html-react-parser';
-import RecipeContext from '../context/RecipeContext';
-import DetailsContext from '../context/DetailsContext';
+import RecipeContext from './context/RecipeContext';
+import { StandardRecipe } from '../model/StandardRecipe';
+
 
 interface IRecipeItemProps{
-  recipe: Recipe
+  recipe: StandardRecipe
 }
 
 export function RecipeItem(props:IRecipeItemProps){
 
-  let {recipe} = props;
   const { addRecipe } = useContext(RecipeContext);
   const { showRecipe } = useContext(DetailsContext);
 
@@ -24,7 +22,9 @@ export function RecipeItem(props:IRecipeItemProps){
         <CardBody>
           <CardTitle tag="h5">{recipe.title}</CardTitle>
           <CardText style={{minHeight: '25%'}}>
+
             <p>{parse((recipe.summary).substring(0, 200))}</p>
+
           </CardText>
 
           <div className='buttonDiv'>

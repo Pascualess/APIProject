@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 import { cuisines } from "../../data/cuisines";
-import { RecipeByCuisine } from "../../model/RecipeByCuisine";
-import { Recipe } from "../../model/RecipeByIngredient";
-import { Random } from "../../model/RecipeByRandom";
-import { getByRandom } from "../../services/GetByRandom";
-import { getFindByCuisine } from "../../services/GetFindByCuisine";
-import { getFindByIngredients } from "../../services/GetFindByIngredients";
+import { StandardRecipe } from "../../model/StandardRecipe";
+import { getByRandom, getFindByCuisine, getFindByIngredients } from "../../services/RecipeService";
 import { RecipeList } from "../RecipeList";
 
 export interface ISearchBarProps {}
@@ -27,9 +23,8 @@ const searchTypes = [
 
 export function SearchBar(props: ISearchBarProps) {
   const [value, setValue] = useState("");
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [recipesByCuisine, setRecipesByCuisine] = useState<RecipeByCuisine>();
-  const [recipesByRandom, setRecipesByRandom] = useState<Random>();
+  const [recipes, setRecipes] = useState<StandardRecipe[]>([]);
+  const [recipe, setRecipe] = useState<StandardRecipe>(); //Testing if i can get getFindByIngredients to work
   const [cuisine, setCuisine] = useState(cuisines[1]);
   const [selectedSearchType, setSelectedSearchType] = useState("random");
 
@@ -38,21 +33,20 @@ export function SearchBar(props: ISearchBarProps) {
   };
 
   const onSearchClick = () => {
-
     switch (selectedSearchType) {
       case "findByIngredient":
         getFindByIngredients(value).then((recipes) => {
-          setRecipes(recipes);
+          setRecipes(recipes); // this is using the test useState
         });
         break;
       case "findByCuisine":
         getFindByCuisine(value, cuisine).then((recipes) => {
-          setRecipesByCuisine(recipes);
+          setRecipes(recipes);
         });
         break;
       case "random":
         getByRandom().then((recipes) => {
-          setRecipesByRandom(recipes);
+          setRecipes(recipes);
         });
         break;
       default:
@@ -91,7 +85,7 @@ export function SearchBar(props: ISearchBarProps) {
           </select>
         </div>
       )}
-      {recipesByRandom && <RecipeList recipesByRandom={recipesByRandom} />}
+      {recipes && <RecipeList recipes={recipes} />}
     </div>
   );
 }
