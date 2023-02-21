@@ -6,11 +6,13 @@ import RecipeContext from "../../context/RecipeContext";
 import { useParams } from "react-router-dom";
 import { GetDetails } from '../../services/RecipeService';
 import { RecipeIdInfo, RecipeByID } from '../../model/RecipeByID';
+import React from "react";
 
 export function Details(){
 
     const [details, setDetails]  = useState<RecipeByID>();
     const [diplayAnalyzedState, setDisplayAnalyzed] = useState<boolean>(false)
+    const [disable, setDisable] = React.useState(false);
 
     const recipeId = useParams().id
     
@@ -71,7 +73,7 @@ export function Details(){
                 <div className="Recipe_Dairy"><p>Dairy Free ? : {displayBoolean(details.dairyFree)}</p></div>
                 <div className="Recipe_Vegetarian"><p>Vegetarian ? : {displayBoolean(details.vegetarian)}</p></div>
                 <div className="Recipe_Vegan"><p>Vegan ? : {displayBoolean(details.dairyFree)}</p></div>
-                <Button className="btn-favorites" onClick={() => addRecipe(details)}>
+                <Button className="btn-favorites" disabled = {disable} onClick={() => {addRecipe(details); setDisable(true)}}>
                   Add to Favorites
                 </Button>
               </div> 
