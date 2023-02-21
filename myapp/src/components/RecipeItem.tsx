@@ -15,6 +15,7 @@ export function RecipeItem(props:IRecipeItemProps){
   const navigate = useNavigate()
 
   const { addRecipe } = useContext(RecipeContext);
+  const [disable, setDisable] = React.useState(false);
 
   return (
     <div className="Recipe_Card">
@@ -25,7 +26,7 @@ export function RecipeItem(props:IRecipeItemProps){
             <button className="btn-details" onClick={() => navigate(`/Details/${props.recipe.id}`)}>
             Details
             </button>
-            <button className="btn-favorites" onClick={() => addRecipe(recipe)}>
+            <button  className="btn-favorites" disabled = {disable} onClick={() => {addRecipe(recipe); setDisable(true)} }>
             Add to Favorites
             </button>
           </div>
