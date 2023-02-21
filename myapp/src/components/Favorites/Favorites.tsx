@@ -3,12 +3,11 @@ import { useContext } from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } from 'reactstrap';
 import parse from 'html-react-parser';
 import RecipeContext from "../../context/RecipeContext";
-import DetailsContext from "../../context/DetailsContext";
 
 export function Favorites(){
 
     const { favorites, removeRecipe } = useContext(RecipeContext);
-    const { showRecipe } = useContext(DetailsContext);
+    // const { showRecipe } = useContext(DetailsContext);
 
     return (
         
@@ -31,9 +30,9 @@ export function Favorites(){
                             </CardText> */}
 
                             <div className='buttonDiv'>
-                                <button className="btn-details" onClick={() => showRecipe(recipe)}>
+                                {/* <button className="btn-details" onClick={() => showRecipe(recipe)}>
                                     Details
-                                </button>
+                                </button> */}
                                 <button className="btn-favorites" onClick={() => removeRecipe(recipe.id)}>
                                     Remove from Favorites
                                 </button>

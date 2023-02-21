@@ -7,24 +7,20 @@ import { Footer } from './components/Footer/Footer';
 import { Favorites } from "../src/components/Favorites/Favorites";
 import RecipeContextProvider from './context/RecipeContextProvider';
 import { Details } from './components/Details/Details';
-import DetailsContextProvider from './context/DetailsContextProvider';
 
 function App() { 
   return (
     <BrowserRouter>
       <div className="App">
         <RecipeContextProvider>
-        <DetailsContextProvider>
           <Header />
           <Routes>
             <Route path="/" element={<SearchBar />} />
-            <Route path="/#favorites" element={<Favorites />} />
-            <Route path="/#details" element={<Details />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/details/:id" element={<Details />} />
           </Routes>
           <Footer />
-          <Favorites />
-          <Details />
-          </DetailsContextProvider>
+
         </RecipeContextProvider>
       </div>
     </BrowserRouter>
