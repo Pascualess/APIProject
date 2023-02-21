@@ -4,12 +4,13 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button } f
 import parse from 'html-react-parser';
 import RecipeContext from "../../context/RecipeContext";
 import { useParams } from "react-router-dom";
-import { GetDetails } from '../../services/DetailsService';
+import { GetDetails } from '../../services/RecipeService';
 import { RecipeIdInfo, RecipeByID } from '../../model/RecipeByID';
 
 export function Details(){
 
-    const  [details, setDetails]  = useState<RecipeByID>();
+    const [details, setDetails]  = useState<RecipeByID>();
+    const [diplayAnalyzedState, setDisplayAnalyzed] = useState<boolean>(false)
 
     const recipeId = useParams().id
     
@@ -26,10 +27,28 @@ export function Details(){
     }, [])
 
 
-    // let display = toDisplay?.map((x) =>
-    //     <h1>{x.title}</h1>
-    // )
+    let analyzed = details?.analyzedInstructions
+    let displayanalyzed = analyzed?.map((x) =>
+      <ul>
+      {x.steps.map((step) => 
+        <div className="analyzedInstDiv">
+          <li className="stepNumber">{`Step ${step.number}`}</li>
+          <p className="stepStep"><b>{step.step}</b></p>
+          <div className="ingDiv">
+            <p className="stepIngDiv">Ingredients needed for this step:</p>
+            <ol>
+              {step.ingredients.map((ingredient) => 
+              <div className="">
+                <li>{ingredient.name}</li>
+              </div>)}
+            </ol>
+          </div>
+        </div>)}
+      </ul>)
 
+    function changeDAIState(){
+      diplayAnalyzedState ? setDisplayAnalyzed(false) : setDisplayAnalyzed(true)
+    }
     
   return (
     <div className="Details" id="details">
@@ -52,6 +71,9 @@ export function Details(){
                 <div className="Recipe_Dairy"><p>Dairy Free ? : {displayBoolean(details.dairyFree)}</p></div>
                 <div className="Recipe_Vegetarian"><p>Vegetarian ? : {displayBoolean(details.vegetarian)}</p></div>
                 <div className="Recipe_Vegan"><p>Vegan ? : {displayBoolean(details.dairyFree)}</p></div>
+                <Button className="btn-favorites" onClick={() => addRecipe(details)}>
+                  Add to Favorites
+                </Button>
               </div> 
             </div>
             <div className="Details-Summary">
@@ -60,7 +82,16 @@ export function Details(){
             </div>
             <div className="Details-Instructions">
               <p className="Instructions-Title">Instructions:</p>
-              <p>{details.instructions}</p>
+              <p>{parse(details.instructions)}</p>
+              {
+                diplayAnalyzedState ? <Button onClick={() => changeDAIState()}>Hide Step-by-Step</Button>
+                :
+                <Button onClick={() => changeDAIState()}>Show Step-by-Step</Button>
+              }
+              {
+                diplayAnalyzedState ? displayanalyzed : <></>
+              }
+              {/* {displayanalyzed} */}
             </div>
             <div className="buttonDiv">
             </div>
