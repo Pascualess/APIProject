@@ -174,7 +174,6 @@
 
 .Header .Logo img {
     height: 100px;
-    transform: translateX(90px);
 }
 
 .Header .Logo a {
@@ -198,6 +197,11 @@
     color: #000;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.Header .Header-NavBar a i {
+    font-size: 18
+    px;
 }
 
 .Header .Header-NavBar a:hover {

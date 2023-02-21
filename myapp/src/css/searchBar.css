@@ -24,7 +24,7 @@
   background-size: cover;
 }
 
-.SearchBar .radio {
+.SearchBar .SearchContainer .radio {
   padding-right: 5px;
   color: #000;
   margin-right: 30px;
@@ -32,16 +32,24 @@
   font-size: 18px;
 }
 
-.SearchBar .radio #input {
+.SearchBar .SearchContainer .radio #input {
   margin-right: 7px;
 }
 
-.SearchBar button {
+.SearchBar .SearchContainer select {
+  font-size: 18px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.SearchBar .SearchContainer button {
   border-radius: 5px;
   margin-top: 10px;
 }
 
-.SearchBar #btn-search {
+.SearchBar .SearchContainer #btn-search {
   font-size: 20px;
   background: var(--color-gray);
   border-color: var(--color-gray);
@@ -49,7 +57,7 @@
   transition: 0.3s;
 }
 
-.SearchBar #btn-search:hover {
+.SearchBar .SearchContainer #btn-search:hover {
   background: var(--color-base);
   border-color: var(--color-base);
   color: #fff;

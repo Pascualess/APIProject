@@ -1,4 +1,8 @@
-.singleRecipe{
+.RecipeList {
+    background: var(--color-gray);
+}
+
+.RecipeList .singleRecipe{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
