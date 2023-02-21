@@ -57,3 +57,8 @@
 .Recipe_Card .Card-Body .Card-Buttons .btn-favorites {
     line-break: normal;
 }
+
+button[disabled] {
+    opacity:0.4;
+    cursor : not-allowed !important;
+}

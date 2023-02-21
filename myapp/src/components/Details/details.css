@@ -137,6 +137,11 @@
     margin-bottom: 0;
 }
 
+button[disabled] {
+    opacity:0.4;
+    cursor : not-allowed !important;
+}
+
 @media screen and (max-width: 900px) {
     .Details-Card .Details-Card_Additional {
         flex-direction: column;
@@ -163,6 +168,8 @@
         line-break: none;
     }
 }
+
+
 
 @media screen and (max-width: 520px) {
     .Details-Card img {
