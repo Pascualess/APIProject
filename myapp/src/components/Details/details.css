@@ -125,6 +125,18 @@
     line-height: 20px;
 }
 
+.stepNumber{
+    margin-top: 30px;
+    border-bottom: solid black 1px;
+}
+.stepIngDiv{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.stepStep{
+    margin-bottom: 0;
+}
+
 @media screen and (max-width: 900px) {
     .Details-Card .Details-Card_Additional {
         flex-direction: column;

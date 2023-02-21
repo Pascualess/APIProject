@@ -37,7 +37,7 @@ export interface RecipeByID {
     occasions:                any[];
     winePairing:              WinePairing;
     instructions:             string;
-    analyzedInstructions:     any[];
+    analyzedInstructions:     Analyzed[];
     originalId:               null;
     spoonacularSourceUrl:     string;
 }
@@ -77,4 +77,29 @@ export interface WinePairing {
     pairedWines:    any[];
     pairingText:    string;
     productMatches: any[];
+}
+
+export interface Analyzed {
+    name:  string;
+    steps: Step[];
+}
+
+export interface Step {
+    equipment:   Ent[];
+    ingredients: Ent[];
+    number:      number;
+    step:        string;
+    length?:     Length;
+}
+
+export interface Ent {
+    id:           number;
+    image:        string;
+    name:         string;
+    temperature?: Length;
+}
+
+export interface Length {
+    number: number;
+    unit:   string;
 }

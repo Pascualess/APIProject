@@ -1,11 +1,12 @@
 import axios from "axios";
 import { Mapper } from "../mapper/mapper";
 import { RecipeByCuisine } from "../model/RecipeByCuisine";
+import { RecipeByID } from "../model/RecipeByID";
 import { Recipe } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
-const apiKey = "7fdb945d7a334d3797ded4b74a1e4abd";
+const apiKey = "13cf15e353864871a8398efdda913019";
 const number = "8";
 
 export function getFindByCuisine(
@@ -35,4 +36,11 @@ export function getFindByIngredients(ingredients: string): Promise<StandardRecip
     .then((response) => {
       return Mapper.mapByIngredient(response.data);
     });
+}
+export function GetDetails(id:string): Promise<RecipeByID> {
+  return axios
+    .get<RecipeByID>(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false`, {
+      params: { apiKey }
+    })
+    .then((response) => response.data);
 }
