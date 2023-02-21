@@ -82,7 +82,6 @@ export function SearchBar(props: ISearchBarProps) {
             onChange={onChange}
           />
         )}
-        <button id="btn-search" onClick={onSearchClick}>Search</button>
         {selectedSearchType === "findByCuisine" && (
           <div>
             <select
@@ -97,8 +96,9 @@ export function SearchBar(props: ISearchBarProps) {
             </select>
           </div>
         )}
+        <button id="btn-search" onClick={onSearchClick}>Search</button>
       </div>
-      {recipes && <RecipeList recipes={recipes} />}
+      {recipes && <RecipeList recipes={recipes}/> }
     </div>
   );
 }

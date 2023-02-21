@@ -5,7 +5,7 @@ import { Recipe } from "../model/RecipeByIngredient";
 import { Random } from "../model/RecipeByRandom";
 import { StandardRecipe } from "../model/StandardRecipe";
 
-const apiKey = "07d5ae18ff0f4b9b9ee3ded6c7bdd929";
+const apiKey = "7fdb945d7a334d3797ded4b74a1e4abd";
 const number = "8";
 
 export function getFindByCuisine(

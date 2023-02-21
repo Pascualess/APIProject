@@ -15,9 +15,9 @@ export function Details(){
     
     const { addRecipe } = useContext(RecipeContext);
 
-    // function displayBoolean(value: boolean){
-    //     return value ? "Yes" : "No";
-    // };
+    function displayBoolean(value: boolean){
+        return value ? "Yes" : "No";
+    };
 
     useEffect(() => {
         let recipeResult = GetDetails(String(recipeId));
@@ -31,55 +31,42 @@ export function Details(){
     // )
 
     
-    return (
-        <div className="Details" id="details">
-            {details !== undefined && 
-                // <h1>{details.title}</h1>
-                <div>
-                    <div className="Details" id="details">
-        <div className="Details_Header">
-          <h2 className="Details_Header__Title">Your Detailed Recipe</h2>
-        </div>
-        <div className="Details_Recipe__Container">
-          <div key={details.id} className="Recipe_Card">
-            <Card>
+  return (
+    <div className="Details" id="details">
+      {details !== undefined && 
+        <div>
+          <div className="Details_Header">
+            <h2>Your Detailed Recipe</h2>
+          </div>
+          <div key={details.id} className="Details-Card">
+            <div className="Details-Card_Head">
               <div className="Card-Image">
                 <img alt="" src={details.image} />
               </div>
-              <CardBody>
-                <CardTitle tag="h5">{details.title}</CardTitle>
-                <CardText>
-                  <div className="Recipe_Card_Additional">
-                    <div className="Recipe_Source">
-                      <p>Original Source: </p>
-                      <a href={details.sourceUrl} target="_blank">
-                        {details.sourceName}
-                      </a>
-                    </div>
-                    {/* <p>
-                      Dairy Free ? : {displayBoolean(recipeDetail.dairyFree)}
-                    </p> */}
-                    <p># of Servings: {details.servings}</p>
-                  </div>
-                  <p className="recipeDetail_Card_Summary">
-                    {parse(details.summary.substring(0, 2000))}
-                  </p>
-                  <div className="recipeDetail_Card_Instructions">
-                    {details.instructions}
-                  </div>
-                </CardText>
-                <div className="buttonDiv">
-                  {/* <button className="btn-details" onClick={() => navigate(`/`)}>
-                    Back to Search
-                  </button> */}
-                </div>
-              </CardBody>
-            </Card>
+              <div className="Details-Card_Additional">
+                <div className="Details-Title">{details.title}</div>
+                <div className="Recipe_Source"><p>Original Source: </p><a href={details.sourceUrl} target="_blank">{details.sourceName}</a></div>
+                <div className="Recipe_Servings"><p># of Servings: {details.servings}</p></div>
+                <div className="Recipe_ReadyIn"><p>Ready In (mins): {details.readyInMinutes}</p></div>
+                <div className="Recipe_Likes"><p>Likes: {details.aggregateLikes}</p></div>
+                <div className="Recipe_Dairy"><p>Dairy Free ? : {displayBoolean(details.dairyFree)}</p></div>
+                <div className="Recipe_Vegetarian"><p>Vegetarian ? : {displayBoolean(details.vegetarian)}</p></div>
+                <div className="Recipe_Vegan"><p>Vegan ? : {displayBoolean(details.dairyFree)}</p></div>
+              </div> 
+            </div>
+            <div className="Details-Summary">
+              <p className="Summary-Title">Summary:</p>
+              <p>{parse(details.summary.substring(0, 2000))}</p>
+            </div>
+            <div className="Details-Instructions">
+              <p className="Instructions-Title">Instructions:</p>
+              <p>{details.instructions}</p>
+            </div>
+            <div className="buttonDiv">
+            </div>
           </div>
-        </div>
-      </div>
-                </div>                
-            }
-        </div>
-    );
+        </div>            
+      }
+    </div>
+  );
 };
