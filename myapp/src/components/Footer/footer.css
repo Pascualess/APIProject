@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background: var(--color-base);
-    position: relative;
     width: 100%;
     left: 0;
     bottom: 0;
