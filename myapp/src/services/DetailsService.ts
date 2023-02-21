@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Info } from "../model/RecipeInfo";
 
-const apiKey = "44dfeaa9703845deaa770e7b3aa388fd";
+const apiKey = "07d5ae18ff0f4b9b9ee3ded6c7bdd929";
 
 export function GetInfo(id: string): Promise<Info> {
   return axios

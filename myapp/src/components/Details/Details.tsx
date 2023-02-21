@@ -20,9 +20,9 @@ export function Details(props: IDetailsProps) {
       let recipeResult = GetInfo(recipeId);
       recipeResult.then((x) => setRecipeDetail(x));
     }
-  }, [recipeId]);
+  }, []);
 
-  if (recipeDetail)
+  if (recipeDetail) {
     return (
       <div className="Details" id="details">
         <div className="Details_Header">
@@ -59,7 +59,7 @@ export function Details(props: IDetailsProps) {
                 </CardText>
 
                 <div className="buttonDiv">
-                  <button className="btn-details" onClick={() => navigate(`/#search`)}>
+                  <button className="btn-details" onClick={() => navigate(`/`)}>
                     Back to Search
                   </button>
                 </div>
@@ -69,4 +69,7 @@ export function Details(props: IDetailsProps) {
         </div>
       </div>
     );
+  } else {
+    return <div></div>;
+  }
 }
