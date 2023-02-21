@@ -3,8 +3,10 @@ import { useContext } from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import "../css/recipeItem.css";
 import RecipeContext from '../context/RecipeContext';
-import DetailsContext from '../context/DetailsContext';
 import { StandardRecipe } from '../model/StandardRecipe';
+import { GetDetails } from '../services/DetailsService';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { RecipeByID } from '../model/RecipeByID';
 
 
 interface IRecipeItemProps{
@@ -13,10 +15,15 @@ interface IRecipeItemProps{
 
 export function RecipeItem(props:IRecipeItemProps){
 
-  let { recipe } = props;
+  const recipe = props.recipe
+  const navigate = useNavigate()
+  
+  // const postUrl = 
+
+  // let { recipe } = props;
 
   const { addRecipe } = useContext(RecipeContext);
-  const { showRecipe } = useContext(DetailsContext);
+  // const { showRecipe } = useContext(DetailsContext);
 
   return (
     <div className="Recipe_Card">
@@ -30,7 +37,7 @@ export function RecipeItem(props:IRecipeItemProps){
             <p>{parse((recipe.summary).substring(0, 200))}</p>
           </CardText> */}
           <div className='buttonDiv'>
-            <button className="btn-details" onClick={() => showRecipe(recipe)}>
+            <button className="btn-details" onClick={() => navigate(`/Details/${props.recipe.id}`)}>
               Details
             </button>
             <button className="btn-favorites" onClick={() => addRecipe(recipe)}>

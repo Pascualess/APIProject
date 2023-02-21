@@ -5,7 +5,7 @@ import "./header.css";
 
 export function Header (){
 
-  const [menuStyle, setMenuStyle] = useState("Hamburger-Container visible");
+  const [menuStyle, setMenuStyle] = useState<string>("Hamburger-Container hidden");
 
   const changeStyle = () => {
      return (menuStyle === "Hamburger-Container visible") ? setMenuStyle("Hamburger-Container hidden") : setMenuStyle("Hamburger-Container visible")
@@ -50,13 +50,13 @@ export function Header (){
         <Link to="/"><img src="https://static.thenounproject.com/png/3670726-200.png" alt="" /></Link>
       </div>
       <div className="Header-NavBar">
-          <a href="#search">Search Bar</a><br />
+          <Link to={'/'}>Search Bar</Link>
           <span> | </span>
           <a href="#recipeList">Recipe Results</a><br />
           <span> | </span>
           <a href="#footer">Site Map</a><br />
           <span> | </span>
-          <Link to="/#favorites">Favorites</Link>
+          <Link to="/favorites">Favorites</Link>
       </div>
     </div>
   );
