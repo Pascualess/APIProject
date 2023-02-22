@@ -217,13 +217,15 @@
 
 @media screen and (max-width: 900px) {
     .Header .Logo img {
-        transform: translateX(-50px);
+        transform: translateX(35px);
     }
     
     .Header .Header-NavBar {
         flex-direction: column;
         margin: 15px 0;
-        font-size: 14px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
     }
 
     .Header .Header-NavBar span {
@@ -232,6 +234,7 @@
 
     .Header .Header-NavBar a {
         margin: -10px 5px;
+        
     }
 }
 
@@ -243,9 +246,12 @@
 
     .Header .Logo img {  
         transform: translateX(30px);
+        display: none;
     }
 
     .Header .Header-NavBar {
-        font-size: 14px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
     }
 }

@@ -62,7 +62,7 @@ export function Details(){
           <div key={details.id} className="Details-Card">
             <div className="Details-Card_Head">
               <div className="Card-Image">
-                <img alt="" src={details.image} />
+                <img className="detailImage" alt="" src={details.image} />
               </div>
               <div className="Details-Card_Additional">
                 <div className="Details-Title">{details.title}</div>
