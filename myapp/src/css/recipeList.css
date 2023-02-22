@@ -1,3 +1,7 @@
+.RecipeList {
+    background: var(--text-secondary);
+}
+
 .RecipeList .singleRecipe{
     display: flex;
     flex-wrap: wrap;

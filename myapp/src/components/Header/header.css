@@ -1,11 +1,10 @@
 .Header {
-    background: var(--color-base);
+    background: var(--color-primary);
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
 }
 
 .Header .Header-Left {
@@ -23,16 +22,19 @@
     cursor: pointer;
 }
 
+.Header .Header-Left .Hamburger-Closed i {
+    color: var(--color-secondary);
+}
+
 .Header .Header-Left .Hamburger-Closed i:hover {
-    color: var(--color-gray);
+    color: var(--text-primary);
 }
 
 .Header .Header-Left .Login,
-.Header .Hamburger-Container .User .Login-Hamburger,
-.Header .Header-Left .Sign_Up,
-.Header .Hamburger-Container .User .Sign_Up-Hamburger {
+.Header .Header-Left .Sign_Up {
     font-size: 16px;
-    background: var(--color-gray);
+    background: var(--color-secondary);
+    color: var(--text-primary);
     border: 0;
     padding: 7px 12px;
     transition: 0.3s;
@@ -48,12 +50,10 @@
 }
 
 .Header .Header-Left .Login:hover,
-.Header .Header-Left .Sign_Up:hover,
-.Header .Hamburger-Container .User .Login-Hamburger:hover,
-.Header .Hamburger-Container .User .Sign_Up-Hamburger:hover {
+.Header .Header-Left .Sign_Up:hover {
     cursor: pointer;
-    background: #000;
-    color: var(--color-gray);
+    background: var(--text-primary);
+    color: var(--color-primary);
 }
 
 /* -------------- HAMBURGER-OPEN STYLING ------------ */
@@ -86,7 +86,7 @@
 }
 
 .Hamburger-Container .Icon i {
-    color: #fff;
+    color: #E3E3E3;
     font-size: 24px;
 }
 
@@ -119,7 +119,7 @@
 .Hamburger-Container .Icon i:hover,
 .Hamburger-Container .Links li a:hover,
 .Hamburger-Container .SocialMedia a:hover {
-    color: var(--color-base);
+    color: #F6362F;
 }
 
 .Hamburger-Container .SocialMedia {
@@ -161,7 +161,9 @@
 .Header .Hamburger-Container .User .Login-Hamburger,
 .Header .Hamburger-Container .User .Sign_Up-Hamburger {
     font-size: 18px;
-    background: var(--color-gray);
+    background: #FFF;
+    color: #000;
+    border: none;
     width: 90px;
     height: 40px;
     border-radius: 5px;
@@ -170,9 +172,9 @@
 
 .Header .Hamburger-Container .User .Login-Hamburger:hover,
 .Header .Hamburger-Container .User .Sign_Up-Hamburger:hover {
-    background: var(--color-base);
-    border-color: var(--color-base);
-    color: #fff;
+    background: #F6362F;
+    border-color: #F6362F;
+    color: #FFF;
 }
 
 
@@ -180,6 +182,8 @@
 
 .Header .Logo img {
     height: 100px;
+    transform: translateX(10px);
+    filter: var(--color-invert);
 }
 
 .Header .Logo a {
@@ -200,17 +204,19 @@
 .Header .Header-NavBar a {
     margin: 20px 5px;
     text-decoration: none;
-    color: #000;
+    color: var(--color-secondary);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .Header .Header-NavBar a:hover {
-    color: var(--color-gray);
+    color: var(--text-primary);
 }
 
 .Header .Header-NavBar span {
     margin: 20px 5px;
+    color: var(--text-primary);
+    font-size: 18px;
 }
 
 

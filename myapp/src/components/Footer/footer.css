@@ -1,7 +1,7 @@
 .Footer {
     display: flex;
     flex-direction: column;
-    background: var(--color-base);
+    background: var(--color-primary);
     width: 100%;
     left: 0;
     bottom: 0;
@@ -16,12 +16,16 @@
 
 .Footer .Subscribe a {
     cursor: pointer;
-    color: #000;
+    color: var(--color-secondary);
     transition: 0.3s;
 }
 
 .Footer .Subscribe a:hover {
-    color: var(--color-gray);
+    color: var(--text-primary);
+}
+
+.Footer .Subscribe p {
+    color: var(--color-secondary);
 }
 
 .Footer .Footer-Main {
@@ -37,6 +41,7 @@
     justify-content: left;
     align-items: center;
     width: 33%;
+    filter: var(--color-invert);
 }
 
 .Footer .Footer-Main .Logo img {
@@ -54,13 +59,13 @@
 .Footer .Footer-Main .SiteMap a {
     margin: 20px 5px;
     text-decoration: none;
-    color: #000;
+    color: var(--color-secondary);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .Footer .Footer-Main .SiteMap a:hover {
-    color: var(--color-gray);
+    color: var(--text-primary);
 }
 
 .Footer .Footer-Main .SiteMap span {
@@ -82,16 +87,19 @@
 
 .Footer .Footer-Main .SocialMedia i {
     font-size: 25px;
-    color: #000;
+    color: var(--color-secondary);
     transition: 0.3s;
 }
 
 .Footer .Footer-Main .SocialMedia i:hover {
-    color: var(--color-gray);
+    color: var(--text-primary);
 }
 
 .Footer .Footer-Main .SocialMedia span {
-    margin: 20px 5px;
+    margin: 0 5px;
+    transform: translateY(-3px);
+    font-size: 18px;
+    color: var(--text-primary);
 }
 
 .Footer .Copyright {
@@ -104,6 +112,7 @@
 .Footer .Copyright i {
     margin-right: 5px;
     font-size: 18px;
+    color: var(--color-secondary);
 }
 
 .Footer .Copyright a {
@@ -112,10 +121,12 @@
     text-decoration: none;
     color: #000;
     transition: 0.3s;
+    color: var(--color-secondary);
 }
 
-.Footer .Copyright a:hover {
-    color: #e3e3e3;
+.Footer .Copyright a:hover, 
+.Footer .Copyright i:hover {
+    color: var(--text-primary);
 }
 
 @media screen and (max-width: 700px) {
