@@ -218,7 +218,7 @@
 
 @media screen and (max-width: 910px) {
     .Header .Logo img {
-        transform: translateX(-50px);
+        transform: translateX(35px);
     }
 
     .Header .Header-NavBar {
@@ -245,9 +245,12 @@
 
     .Header .Logo img {  
         transform: translateX(30px);
+        display: none;
     }
 
     .Header .Header-NavBar {
-        font-size: 14px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
     }
 }
