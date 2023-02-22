@@ -47,18 +47,20 @@
 .SearchBar .SearchContainer button {
   border-radius: 5px;
   margin-top: 10px;
+  background: #F6362F;
+  border-color: #F6362F;
+  color: #E3E3E3;
+}
+
+.SearchBar .SearchContainer button:hover {
+  background: #E3E3E3;
+  border-color: #E3E3E3;
+  color: #F6362F;
 }
 
 .SearchBar .SearchContainer #btn-search {
   font-size: 20px;
-  background: var(--color-gray);
-  border-color: var(--color-gray);
   padding: 2px 20px;
   transition: 0.3s;
 }
 
-.SearchBar .SearchContainer #btn-search:hover {
-  background: var(--color-base);
-  border-color: var(--color-base);
-  color: #fff;
-}

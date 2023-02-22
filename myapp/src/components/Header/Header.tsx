@@ -49,12 +49,14 @@ export function Header (){
       <div className="Logo">
         <Link to="/"><img src="https://static.thenounproject.com/png/3670726-200.png" alt="" /></Link>
       </div>
-      <div className="Header-NavBar">
+      <div className="Header-Right">
+        <div className="Header-NavBar">
           <Link to={'/'}>Home</Link>
           <span> | </span>
           <Link to="/favorites">Favorites</Link>
           <span> | </span>
           <a href="#footer">Site Map</a><br />
+        </div>
       </div>
     </div>
   );

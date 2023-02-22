@@ -6,9 +6,9 @@
     height: 26em;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.5);
-    -moz-box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.5);
-    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: var(--shadow);
+    -moz-box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
     background: #fff;
 }
 
@@ -40,18 +40,18 @@
 }
 
 .Recipe_Card .Card-Body .Card-Buttons button {
-    background-color: var(--color-gray);
-    border-color: var(--color-gray);
-    color: #000;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--text-primary);
     transition: 0.3s;
     border-radius: 5px;
     padding: 5px 10px;
 }
 
 .Recipe_Card .Card-Body .Card-Buttons button:hover {
-    background-color: var(--color-base);
-    border-color: var(--color-base);
-    color: #fff;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--text-primary);
 }
 
 .Recipe_Card .Card-Body .Card-Buttons .btn-favorites {

@@ -13,8 +13,20 @@ code {
 }
 
 :root {
-  --color-base: #F6532F;
-  --color-gray: #E3E3E3;
+  --color-primary: #F6362F;
+  --color-secondary: #E3E3E3;
+  --text-primary: #000;
+  --text-secondary: #fff;
+  --shadow: 2px 4px 8px 2px rgba(0,0,0,0.5);
+}
+
+[data-theme='dark']{
+  --color-primary: #000;
+  --color-secondary: #F6362F;
+  --text-primary: #fff;
+  --text-secondary: #000;
+  --shadow: 2px 4px 8px 2px rgba(255, 255, 255, 0.5);
+  --color-invert: invert(100%);
 }
 
 * {

@@ -1,7 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   margin: 0;
+  transition: all 0.3s;
 }
+
 .paginationContainer .pagination{
   justify-content: center;
+}
+
+.App .themeSwitcher {
+  position: absolute;
+  border: none;
+  top: 5px;
+  right: 15px;
+  background: none;
+  color: var(--text-primary);
+}
+
+.App .themeSwitcher i {
+  font-size: 25px;
 }
