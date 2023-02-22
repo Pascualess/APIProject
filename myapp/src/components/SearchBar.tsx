@@ -80,6 +80,7 @@ export function SearchBar(props: ISearchBarProps) {
             type="text"
             value={value}
             onChange={onChange}
+            placeholder="What sounds good?"
           />
         )}
         {selectedSearchType === "findByCuisine" && (
@@ -102,3 +103,7 @@ export function SearchBar(props: ISearchBarProps) {
     </div>
   );
 }
+function keyDownHandler(this: Document, ev: KeyboardEvent) {
+  throw new Error("Function not implemented.");
+}
+
