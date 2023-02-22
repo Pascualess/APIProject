@@ -37,8 +37,8 @@ export function Header (){
             </ul>
 
             <div className="User">
-                <button className="Login">Login</button>
-                <button className="Sign_Up">Sign Up</button>
+                <button className="Login-Hamburger">Login</button>
+                <button className="Sign_Up-Hamburger">Sign Up</button>
             </div>
         </div>
 

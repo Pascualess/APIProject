@@ -16,6 +16,7 @@ export function Favorites(){
         <div className="Favorites" id="favorites">
             <div className="Favorites_Header">
                 <h2 className="Favorites_Header__Title">Your Favorite Recipes</h2>
+                <p className="Favorites_Header__Count">Total Recipes: {favorites.length}</p>
             </div>
             <div className="Favorites_Recipe__Container">
                 {favorites.map((recipe) => 

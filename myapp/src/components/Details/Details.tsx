@@ -95,8 +95,6 @@ export function Details(){
               }
               {/* {displayanalyzed} */}
             </div>
-            <div className="buttonDiv">
-            </div>
           </div>
         </div>            
       }

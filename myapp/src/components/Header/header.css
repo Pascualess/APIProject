@@ -28,7 +28,9 @@
 }
 
 .Header .Header-Left .Login,
-.Header .Header-Left .Sign_Up {
+.Header .Hamburger-Container .User .Login-Hamburger,
+.Header .Header-Left .Sign_Up,
+.Header .Hamburger-Container .User .Sign_Up-Hamburger {
     font-size: 16px;
     background: var(--color-gray);
     border: 0;
@@ -46,7 +48,9 @@
 }
 
 .Header .Header-Left .Login:hover,
-.Header .Header-Left .Sign_Up:hover {
+.Header .Header-Left .Sign_Up:hover,
+.Header .Hamburger-Container .User .Login-Hamburger:hover,
+.Header .Hamburger-Container .User .Sign_Up-Hamburger:hover {
     cursor: pointer;
     background: #000;
     color: var(--color-gray);
@@ -154,7 +158,8 @@
     justify-content: space-evenly;
 }
 
-.Hamburger-Container .User button {
+.Header .Hamburger-Container .User .Login-Hamburger,
+.Header .Hamburger-Container .User .Sign_Up-Hamburger {
     font-size: 18px;
     background: var(--color-gray);
     width: 90px;
@@ -163,7 +168,8 @@
     transition: 0.3s;
 }
 
-.Hamburger-Container.visible .User button:hover {
+.Header .Hamburger-Container .User .Login-Hamburger:hover,
+.Header .Hamburger-Container .User .Sign_Up-Hamburger:hover {
     background: var(--color-base);
     border-color: var(--color-base);
     color: #fff;
@@ -199,11 +205,6 @@
     transition: 0.3s;
 }
 
-.Header .Header-NavBar a i {
-    font-size: 18
-    px;
-}
-
 .Header .Header-NavBar a:hover {
     color: var(--color-gray);
 }
@@ -215,14 +216,14 @@
 
 /* -------------- MOBILE RESPONSIVENESS ------------ */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 910px) {
     .Header .Logo img {
         transform: translateX(-50px);
     }
-    
+
     .Header .Header-NavBar {
+        display: flex;
         flex-direction: column;
-        margin: 15px 0;
         font-size: 14px;
     }
 
@@ -231,7 +232,8 @@
     }
 
     .Header .Header-NavBar a {
-        margin: -10px 5px;
+        margin: 2px 5px;
+        transform: translateY(10px);
     }
 }
 
