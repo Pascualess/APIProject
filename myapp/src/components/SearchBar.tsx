@@ -98,7 +98,7 @@ export function SearchBar(props: ISearchBarProps) {
         )}
         <button id="btn-search" onClick={onSearchClick}>Search</button>
       </div>
-      {recipes && <RecipeList recipes={recipes}/> }
+      {recipes &&<RecipeList recipes={recipes}/>}
     </div>
   );
 }
