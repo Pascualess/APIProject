@@ -53,7 +53,6 @@ export interface ExtendedIngredient {
     originalName: string;
     amount:       number;
     unit:         string;
-    meta:         string[];
     measures:     Measures;
 }
 

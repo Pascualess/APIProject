@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
-import { cuisines } from "../data/cuisines";
-import { RecipeByCuisine } from "../model/RecipeByCuisine";
-import { Random } from "../model/RecipeByRandom";
+import "../css/searchBar.css";
+import { useState } from "react";
+import { StandardRecipe } from "../model/StandardRecipe";
 import { getByRandom, getFindByCuisine, getFindByIngredients } from "../services/RecipeService";
 import { RecipeList } from "./RecipeList";
-import "../css/searchBar.css";
-import { StandardRecipe } from "../model/StandardRecipe";
-
-export interface ISearchBarProps {}
+import { cuisines } from "../data/cuisines";
 
 const searchTypes = [
   {
@@ -24,11 +20,11 @@ const searchTypes = [
   },
 ];
 
-export function SearchBar(props: ISearchBarProps) {
+export function SearchBar() {
   const [value, setValue] = useState("");
   const [recipes, setRecipes] = useState<StandardRecipe[]>([]);
-  const [cuisine, setCuisine] = useState(cuisines[1]);
   const [selectedSearchType, setSelectedSearchType] = useState("random");
+  const [cuisine, setCuisine] = useState(cuisines[1]);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -53,27 +49,27 @@ export function SearchBar(props: ISearchBarProps) {
         break;
       default:
         break;
-    }
+    };
   };
 
   return (
     <div className="SearchBar">
       <div className="SearchContainer">
-        <div>
-          {searchTypes.map((searchType) => (
+        
+        <div>{searchTypes.map((searchType) => (
             <label className="radio" key={searchType.value}>
-              <input
-                type="radio"
-                name="searchType"
-                id="input"
-                value={searchType.value}
-                checked={selectedSearchType === searchType.value}
-                onChange={(e) => setSelectedSearchType(e.target.value)}
-              />
-              {searchType.label}
-            </label>
-          ))}
+            <input
+              type="radio"
+              name="searchType"
+              id="input"
+              value={searchType.value}
+              checked={selectedSearchType === searchType.value}
+              onChange={(e) => setSelectedSearchType(e.target.value)}
+            />
+            {searchType.label}</label>
+          ))};
         </div>
+        
         {selectedSearchType !== "random" && (
           <input
             className="bar"

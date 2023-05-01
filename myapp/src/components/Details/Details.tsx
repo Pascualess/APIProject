@@ -14,7 +14,7 @@ export function Details(){
     const [diplayAnalyzedState, setDisplayAnalyzed] = useState<boolean>(false)
     const [disable, setDisable] = React.useState(false);
 
-    const recipeId = useParams().id
+    const recipeId = useParams().id;
     
     const { addRecipe } = useContext(RecipeContext);
 

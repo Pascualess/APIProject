@@ -9,7 +9,7 @@ export function Favorites(){
 
     const { favorites, removeRecipe } = useContext(RecipeContext);
     // const { showRecipe } = useContext(DetailsContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         
